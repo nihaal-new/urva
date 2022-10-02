@@ -17,7 +17,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-STICKER = "CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE"
+STICKER = "CAACAgIAAxkBAAEFSkRi0jcSIf2Xbx18syhDGnlavGL35QACVBYAAtB7QUn8uVjZ80ZWKCkE"
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -48,7 +48,7 @@ async def start(client, message):
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_sticker(
-            sticker="CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE",
+            sticker="CAACAgIAAxkBAAEFSkRi0jcSIf2Xbx18syhDGnlavGL35QACVBYAAtB7QUn8uVjZ80ZWKCkE",
             reply_markup = InlineKeyboardMarkup(buttons)    
         )
         return
