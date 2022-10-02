@@ -625,7 +625,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "try":            
         btn = [[
-            InlineKeyboardButton('🗣️ ʀᴇQᴜᴇꜱᴛ ʜᴇʀᴇ 🗣️', url='https://t.me/UrvashiTheaters_Requests')
+            InlineKeyboardButton('🗣️ ʀᴇQᴜᴇꜱᴛ ʜᴇʀᴇ 🗣️', url='https://t.me/tomman_requests')
         ],[
             InlineKeyboardButton('ᴍᴀʟ', callback_data='mal'),
             InlineKeyboardButton('ᴛᴀᴍ', callback_data='tml'),
@@ -737,7 +737,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'tipss':
         await query.answer("🔰 Ask with correct spelling\n🔰 Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n🔰 For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021\n\tⒸ ᴍᴏᴠɪᴇ ʜᴜʙ", True)
     elif query.data == 'reqst11':
-        await query.answer(f"Hey {query.from_user.first_name} Bro 😍\n\n🎯 Click The Below Button The Files You Want... And Start The Bot Get The File and Go To Your House..😂\n\n©️ ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", True)
+        await query.answer(f"Hey {query.from_user.first_name} ബ്രോ 😍\n\n🎯ഇതിൽ ഇട്ട് കുത്തി കളിക്കാതെ താഴെയുള്ള റിസൾട്ടുകളിൽ വേണ്ടുന്ന സൈസ് ഫയൽ സെലക്ട്‌ ചെയ്ത് എടുക്ക് 😂..😂\n\n©️ ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", True)
     elif query.data == 'infoo':
         await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸ ᴍᴏᴠɪᴇ ʜᴜʙ", True)
     elif query.data == 'moviess':
