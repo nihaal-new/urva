@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from info import IMDB_TEMPLATE
+from info import IMDB_TEMPLATE, IMDB_TEMPLATE_A
 from utils import extract_user, get_file_id, get_poster, last_online
 import time
 from datetime import datetime
@@ -144,7 +144,7 @@ async def imdb_search(client, message):
             ]
             for movie in movies
         ]
-        await k.edit('Here is what i found on IMDb', reply_markup=InlineKeyboardMarkup(btn))
+        await k.edit('❤️ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛᴇᴅ ᴍᴏᴠɪᴇ ꜰʀᴏᴍ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴꜱ', reply_markup=InlineKeyboardMarkup(btn))
     else:
         await message.reply('Give me a movie / series Name')
 
@@ -197,11 +197,11 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
         caption = "No Results"
     if imdb.get('poster'):
         try:
-            await quer_y.message.reply_photo(photo=imdb['poster'], caption=caption, reply_markup=InlineKeyboardMarkup(btn))
+            await quer_y.message.reply_text(text=caption, reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            await quer_y.message.reply_photo(photo=poster, caption=caption, reply_markup=InlineKeyboardMarkup(btn))
+            await quer_y.message.reply_text(text=caption, reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
             await quer_y.message.reply(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
