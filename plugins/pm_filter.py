@@ -104,7 +104,7 @@ async def next_page(bot, query):
              InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data="close_pages")]
         )
         btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"'https://t.me/{SUPPORT_CHAT}")]
+            [InlineKeyboardButton(f"ഉർവശി തീയറ്റേഴ്‌സ്",url=f"'https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
@@ -113,7 +113,7 @@ async def next_page(bot, query):
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="neosub"),
                     InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="neosub"),
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
-        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"'https://t.me/{SUPPORT_CHAT}")])
+        btn.append([InlineKeyboardButton("ഉർവശി തീയറ്റേഴ്‌സ്",url=f"'https://t.me/{SUPPORT_CHAT}")])
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
         )
@@ -126,7 +126,7 @@ async def next_page(bot, query):
             ],
         )
         btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"https://t.me/{SUPPORT_CHAT}")]
+            [InlineKeyboardButton(f"ഉർവശി തീയറ്റേഴ്‌സ്",url=f"https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
