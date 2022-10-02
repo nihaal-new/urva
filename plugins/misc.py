@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from info import IMDB_TEMPLATE, IMDB_TEMPLATE_A
+from info import IMDB_TEMPLATE, IMDB_TEMPLATE_A, SUPPORT_CHAT
 from utils import extract_user, get_file_id, get_poster, last_online
 import time
 from datetime import datetime
@@ -155,8 +155,8 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{imdb.get('title')}",
-                    url=imdb['url'],
+                    text="📯ഉർവശി തീയറ്റേർസ്📯",
+                    url=f"{SUPPORT_CHAT},
                 )
             ]
         ]
