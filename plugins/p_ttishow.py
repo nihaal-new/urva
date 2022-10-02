@@ -45,7 +45,7 @@ async def save_group(bot, message):
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_video(
             video="https://telegra.ph/file/f264ce1113efb81c8a682.mp4",
-            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 ᴹᴱ📕 ɴʙ: ɪꜰ ʏᴏᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @ᴀᴅᴍɪɴ</b>",
+            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 ᴹᴱ\n📕:ᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @ᴀᴅᴍɪɴ</b>",
             reply_markup=reply_markup)
     else:
         for u in message.new_chat_members:
