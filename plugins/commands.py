@@ -28,7 +28,7 @@ async def start(client, message):
         InlineKeyboardButton('💿 ʀᴇᴘᴏʀᴛ', url="https://t.me/movies_club_2019")
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_sticker(sticker="CAACAgIAAxkBAAEFSnBi0nu0mS2oqX3WMFAloyM6xymyeAAC4xAAAqch4EmHTbt5tPu_XykE",)
+        await message.reply_sticker(sticker="CAACAgIAAxkBAAEFSnBi0nu0mS2oqX3WMFAloyM6xymyeAAC4xAAAqch4EmHTbt5tPu_XykE", reply_markup=reply_markup)
         await asyncio.sleep(10) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
