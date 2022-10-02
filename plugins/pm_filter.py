@@ -899,7 +899,6 @@ async def advantage_spell_chok(msg):
         k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(20)
         await k.delete()
-        await msg.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -934,7 +933,6 @@ async def advantage_spell_chok(msg):
         k=await msg.reply_photo(photo="https://telegra.ph/file/f5d411fba25ecfa5197fe.jpg",caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(20)
         await k.delete()
-        await msg.delete()
         return
     SPELL_CHECK[msg.id] = movielist
     btn = [[
@@ -947,7 +945,7 @@ async def advantage_spell_chok(msg):
                       reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
-    await msg.delete()
+    
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
