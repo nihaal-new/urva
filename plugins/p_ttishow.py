@@ -37,24 +37,29 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-            InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('📢 Updates', url='https://t.me/TeamEvamaria')
-        ]]
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true') ] ,
+      [
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
+        InlineKeyboardButton('💿 ʀᴇᴘᴏʀᴛ', url="https://t.me/movies_club_2019")
+    ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+        await message.reply_video(
+            video="https://telegra.ph/file/f264ce1113efb81c8a682.mp4",
+            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 ᴹᴱ📕 ɴʙ: ɪꜰ ʏᴏᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @ᴀᴅᴍɪɴ</b>",
             reply_markup=reply_markup)
     else:
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            for u in message.new_chat_members:
+        for u in message.new_chat_members:
+                buttons = [[
+                InlineKeyboardButton('🔰 ɢʀᴏᴜᴘ ʀᴜʟᴇs 🔰', url="https://telegra.ph/RULES-OF-12-22")
+            ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
-
+                temp.MELCOW['welcome'] = await message.reply_sticker(
+                sticker="CAACAgIAAxkBAAEFSkRi0jcSIf2Xbx18syhDGnlavGL35QACVBYAAtB7QUn8uVjZ80ZWKCkE",
+                reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
@@ -137,7 +142,7 @@ async def re_enable_chat(bot, message):
     await message.reply("Chat Successfully re-enabled")
 
 
-@Client.on_message(filters.command('stats') & filters.incoming)
+@Client.on_message(filters.command('stat') & filters.incoming)
 async def get_ststs(bot, message):
     rju = await message.reply('Fetching stats..')
     total_users = await db.total_users_count()
@@ -236,7 +241,7 @@ async def unban_a_user(bot, message):
 
 
     
-@Client.on_message(filters.command('users') & filters.user(ADMINS))
+@Client.on_message(filters.command('user') & filters.user(ADMINS))
 async def list_users(bot, message):
     # https://t.me/GetTGLink/4184
     raju = await message.reply('Getting List Of Users')
@@ -254,7 +259,7 @@ async def list_users(bot, message):
             outfile.write(out)
         await message.reply_document('users.txt', caption="List Of Users")
 
-@Client.on_message(filters.command('chats') & filters.user(ADMINS))
+@Client.on_message(filters.command('chat') & filters.user(ADMINS))
 async def list_chats(bot, message):
     raju = await message.reply('Getting List Of chats')
     chats = await db.get_all_chats()
