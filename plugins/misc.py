@@ -155,8 +155,8 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text="📯ഉർവശി തീയറ്റേർസ്📯",
-                    url=f"{SUPPORT_CHAT}",
+                    text=f"{imdb.get('title')}",
+                    url=imdb['url'],
                 )
             ]
         ]
