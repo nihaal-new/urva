@@ -17,6 +17,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
+STICKER = "CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE"
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -28,7 +29,7 @@ async def start(client, message):
         InlineKeyboardButton('💿 ʀᴇᴘᴏʀᴛ', url="https://t.me/movies_club_2019")
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_sticker(sticker="CAACAgIAAxkBAAEFSnBi0nu0mS2oqX3WMFAloyM6xymyeAAC4xAAAqch4EmHTbt5tPu_XykE", reply_markup=reply_markup)
+        await message.reply_sticker(STICKER, (message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(10) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
