@@ -48,7 +48,8 @@ async def start(client, message):
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_sticker(
-            sticker="CAACAgIAAxkBAAEFSkRi0jcSIf2Xbx18syhDGnlavGL35QACVBYAAtB7QUn8uVjZ80ZWKCkE"     
+            sticker="CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE",
+            reply_markup = InlineKeyboardMarkup(buttons)    
         )
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -73,7 +74,7 @@ async def start(client, message):
             except (IndexError, ValueError):
                 btn.append([InlineKeyboardButton("⚙️ ᴛʀʏ ᴀɢᴀɪɴ ⚙️", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_sticker(
-            sticker="CAACAgIAAxkBAAEFSkZi0jdCuWQUNIuNTRotiuYgyNbeDAAC5hcAAvP2gUnUb8mtTJzF0SkE",
+            sticker="CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE",
             chat_id=message.from_user.id,
             reply_markup=InlineKeyboardMarkup(btn)
             )
@@ -87,7 +88,8 @@ async def start(client, message):
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_sticker(
-            sticker="CAACAgIAAxkBAAEFSkZi0jdCuWQUNIuNTRotiuYgyNbeDAAC5hcAAvP2gUnUb8mtTJzF0SkE"      
+            sticker="CAACAgIAAxkBAAEF-h9jOQPU4thl0Iaa30rC0Cj9uqLPIgACdBkAAv3EyUkrrD3DFv2fpSoE",
+            reply_markup = InlineKeyboardMarkup(buttons)      
         )
         return
     data = message.command[1]
